@@ -7,6 +7,14 @@ function PDFCard({ file }) {
   const size = (file.metadata?.size / 1024).toFixed(1);
   const date = new Date(file.uploaded_at || file.created_at).toLocaleDateString();
 
+  const downloadUrl = process.env.NODE_ENV === 'production'
+    ? `/.netlify/functions/api/download-report?year=${year}&quarter=Q${quarter}`
+    : `/api/download-report?year=${year}&quarter=Q${quarter}`;
+
+  const viewUrl = process.env.NODE_ENV === 'production'
+    ? `/.netlify/functions/api/view-pdf?year=${year}&quarter=Q${quarter}`
+    : `/view-pdf?year=${year}&quarter=Q${quarter}`;
+
   return (
     <div className="pdf-card">
       <div className="pdf-card-header">
@@ -19,7 +27,7 @@ function PDFCard({ file }) {
         </div>
         <div className="pdf-actions">
           <a
-            href={`/view-pdf?year=${year}&quarter=Q${quarter}`}
+            href={viewUrl}
             className="btn btn-primary"
             target="_blank"
             rel="noopener noreferrer"
@@ -27,7 +35,7 @@ function PDFCard({ file }) {
             View
           </a>
           <a
-            href={`/.netlify/functions/api/download-report?year=${year}&quarter=Q${quarter}`}
+            href={downloadUrl}
             className="btn btn-secondary"
           >
             Download

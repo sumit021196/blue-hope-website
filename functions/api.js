@@ -61,6 +61,7 @@ exports.handler = async (event, context) => {
                     body: JSON.stringify(processedFiles)
                 };
 
+            case 'view-pdf':
             case 'download-report':
                 if (!year || !quarter) {
                     return {
@@ -101,12 +102,17 @@ exports.handler = async (event, context) => {
                 const arrayBuffer = await fileData.arrayBuffer();
                 const buffer = Buffer.from(arrayBuffer);
 
+                // Set different headers based on whether it's a view or download
+                const contentDisposition = path === 'view-pdf'
+                    ? `inline; filename="${fileName}"`
+                    : `attachment; filename="${fileName}"`;
+
                 return {
                     statusCode: 200,
                     headers: {
                         ...headers,
                         'Content-Type': 'application/pdf',
-                        'Content-Disposition': `attachment; filename="${fileName}"`,
+                        'Content-Disposition': contentDisposition,
                         'Content-Length': buffer.length,
                         'Cache-Control': 'no-cache',
                         'Pragma': 'no-cache',
