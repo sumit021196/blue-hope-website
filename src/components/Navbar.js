@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
+import InvestorDropdown from './InvestorDropdown';
+import './InvestorDropdown.css';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,7 +22,10 @@ function Navbar() {
       <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
         <li><Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
         <li><Link to="/about" onClick={() => setIsMenuOpen(false)}>About</Link></li>
-        <li><Link to="/investor" onClick={() => setIsMenuOpen(false)}>Investor Relation</Link></li>
+        <li className="dropdown-parent">
+          <span className="dropdown-label">INVESTOR RELATION</span>
+          <InvestorDropdown />
+        </li>
         <li><Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link></li>
       </ul>
     </nav>
