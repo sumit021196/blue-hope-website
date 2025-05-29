@@ -58,7 +58,7 @@ exports.handler = async (event, context) => {
                         ...headers,
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify(processedFiles)
+                    body: JSON.stringify({ files: processedFiles })
                 };
 
             case 'view-pdf':
