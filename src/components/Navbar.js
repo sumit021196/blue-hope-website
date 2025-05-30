@@ -13,7 +13,7 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="logo">Blue Hope</div>
+      <div className="logo">Bluehope</div>
       <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
         <span></span>
         <span></span>
