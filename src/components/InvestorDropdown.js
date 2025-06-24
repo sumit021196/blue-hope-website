@@ -28,7 +28,7 @@ const menuItems = [
       { label: 'FAQ' }
     ]
   },
-  { label: 'Policies' },
+  { label: 'Policies', to: '/policies' },
   { label: 'Corporate Governance' },
 ];
 

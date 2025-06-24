@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Investor from './pages/Investor';
 import FinancialResults from './pages/FinancialResults';
+import Policies from './pages/Policies';
 import Contact from './pages/Contact';
 import './App.css';
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/investor" element={<Investor />} />
           <Route path="/financial-results" element={<FinancialResults />} />
+          <Route path="/policies" element={<Policies />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
