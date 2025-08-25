@@ -29,7 +29,7 @@ const menuItems = [
       { label: 'AGM/EGM Notice', to: '/agm-egm-notice' }
     ]
   },
-  { label: 'Policies' },
+  { label: 'Policies', to: '/policies' },
   { label: 'Corporate Governance' },
 ];
 
