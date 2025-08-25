@@ -6,6 +6,7 @@ import About from './pages/About';
 import Investor from './pages/Investor';
 import FinancialResults from './pages/FinancialResults';
 import Contact from './pages/Contact';
+import AgmEgmNotice from './pages/AgmEgmNotice';
 import './App.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/investor" element={<Investor />} />
           <Route path="/financial-results" element={<FinancialResults />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/agm-egm-notice" element={<AgmEgmNotice />} />
         </Routes>
       </main>
     </div>

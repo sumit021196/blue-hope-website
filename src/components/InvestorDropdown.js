@@ -25,7 +25,8 @@ const menuItems = [
     label: "Shareholder's Help Desk",
     submenu: [
       { label: 'Contact' },
-      { label: 'FAQ' }
+      { label: 'FAQ' },
+      { label: 'AGM/EGM Notice', to: '/agm-egm-notice' }
     ]
   },
   { label: 'Policies' },
@@ -52,7 +53,15 @@ function InvestorDropdown() {
           {item.submenu && openIndex === idx && (
             <div className="submenu">
               {item.submenu.map(sub => (
-                <div className="submenu-item" key={sub.label}>{sub.label}</div>
+                sub.to ? (
+                  <Link to={sub.to} className="submenu-item" key={sub.label}>
+                    {sub.label}
+                  </Link>
+                ) : (
+                  <div className="submenu-item" key={sub.label}>
+                    {sub.label}
+                  </div>
+                )
               ))}
             </div>
           )}
