@@ -28,6 +28,18 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'build')));
 
+// Serve PDF files with download headers
+app.get('/pdf/:filename', (req, res) => {
+    const file = path.join(__dirname, 'public', 'pdf', req.params.filename);
+    res.download(file, req.params.filename, (err) => {
+        if (err) {
+            if (!res.headersSent) {
+                res.status(404).send('File not found');
+            }
+        }
+    });
+});
+
 // Error handling for JSON parsing
 app.use((err, req, res, next) => {
     if (err instanceof SyntaxError && err.status === 400 && 'body' in err) {
