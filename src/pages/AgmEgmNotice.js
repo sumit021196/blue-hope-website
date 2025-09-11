@@ -9,7 +9,7 @@ function AgmEgmNotice() {
     id: 1,
     title: 'Notice of 1st Annual General Meeting of the Company',
     content: 'This is to inform all the shareholders that the 1st Annual General Meeting of the Company will be held on Friday, the 15th day of March, 2024 at 11:00 A.M. (IST) at the Registered Office of the Company to transact the following businesses...',
-    pdfUrl: `${window.location.origin}/pdf/Notice of 1st AGM_Bluehope Solutions Limited.pdf`,
+    pdfUrl: `${window.location.origin}/pdf/Notice_of_1st_AGM_Bluehope_Solutions_Limited.pdf`,
     fileName: 'Notice_of_1st_AGM_Bluehope_Solutions_Limited.pdf'
   };
 
