@@ -5,7 +5,7 @@ import './InvestorDropdown.css';
 const menuItems = [
   { label: 'Financial Results', to: '/financial-results' },
   { label: 'Shareholding Pattern' },
-  { label: 'Stock Exchange Disclosure' },
+  { label: 'Stock Exchange Disclosure', to: '/stock-exchange-disclosure' },
   { label: 'Investor Grievance' },
   {
     label: 'Code Of Conduct',
