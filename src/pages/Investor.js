@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PDFCard from '../components/PDFCard';
+import DisclosureCard from '../components/DisclosureCard';
 import './Investor.css';
 
 function Investor() {
@@ -94,6 +95,26 @@ function Investor() {
         {files.map(file => (
           <PDFCard key={file.name} file={file} />
         ))}
+      </div>
+  
+      <h1 style={{ marginTop: '2rem' }}>Stock Exchange Disclosures</h1>
+      <div className="pdf-grid">
+        {[
+          {
+            title: 'Newspaper Publication of Notice of Adjourned 1st AGM dated 26.09.2025 - Bluehope Solutions',
+            fileName: 'Newspaper Publication of Notice of Adjourned 1st AGM dated 26.09.2025_Bluehope Solutions.pdf'
+          }
+        ].map((d) => {
+          const pdfUrl = `${window.location.origin}/pdf/${encodeURIComponent(d.fileName)}`;
+          return (
+            <DisclosureCard
+              key={d.fileName}
+              title={d.title}
+              pdfUrl={pdfUrl}
+              fileName={d.fileName}
+            />
+          );
+        })}
       </div>
     </div>
   );
