@@ -8,6 +8,7 @@ import FinancialResults from './pages/FinancialResults';
 import Policies from './pages/Policies';
 import Contact from './pages/Contact';
 import AgmEgmNotice from './pages/AgmEgmNotice';
+import StockExchangeDisclosure from './pages/StockExchangeDisclosure';
 import './App.css';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="/policies" element={<Policies />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/agm-egm-notice" element={<AgmEgmNotice />} />
+          <Route path="/stock-exchange-disclosure" element={<StockExchangeDisclosure />} />
         </Routes>
       </main>
     </div>
