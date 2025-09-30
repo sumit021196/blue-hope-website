@@ -1,8 +1,7 @@
 :root {
-    --primary-color: #1E90FF;
-    --secondary-color: #F4F4F4;
-    --accent-color: #FFD700;
-    --text-color: #333333;
+    --primary-color: #24e007; /* green */
+    --text-color: #000000;    /* black */
+    --bg-color: #ffffff;      /* white */
 }
 
 * {
@@ -14,7 +13,7 @@
 body {
     font-family: 'Open Sans', sans-serif;
     color: var(--text-color);
-    background-color: var(--secondary-color);
+    background-color: var(--bg-color);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -29,5 +28,11 @@ h1, h2, h3, h4, h5, h6 {
 
 main {
     flex: 1;
-    padding: 2rem;
-} 
+    padding: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+}

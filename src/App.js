@@ -10,13 +10,19 @@ import Contact from './pages/Contact';
 import AgmEgmNotice from './pages/AgmEgmNotice';
 import StockExchangeDisclosure from './pages/StockExchangeDisclosure';
 import './App.css';
+import CssBaseline from '@mui/material/CssBaseline';
+import { ThemeProvider } from '@mui/material/styles';
+import theme from './theme';
+import ScrutinizersReportsPage from './pages/ScrutinizersReportsPage';
 
 function App() {
   return (
-    <div className="app">
-      <Navbar />
-      <main>
-        <Routes>
+    <ThemeProvider theme={theme}>
+      <div className="app">
+        <CssBaseline />
+        <Navbar />
+        <main>
+          <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/investor" element={<Investor />} />
@@ -25,9 +31,11 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/agm-egm-notice" element={<AgmEgmNotice />} />
           <Route path="/stock-exchange-disclosure" element={<StockExchangeDisclosure />} />
-        </Routes>
-      </main>
-    </div>
+          <Route path="/shareholders-help-desk/scrutinizers-reports" element={<ScrutinizersReportsPage />} />
+          </Routes>
+        </main>
+      </div>
+    </ThemeProvider>
   );
 }
 
